@@ -1,0 +1,19 @@
+{
+   "products": [
+      {
+         "img": "img/sneaker.jpg",
+         "title": "Кроссовки Nike Air Force 1 :07 QS",
+         "price": "11 000"
+      },
+      {
+         "img": "img/sneaker.jpg",
+         "title": "Кроссовки Nike Air Force 1 :07 QS",
+         "price": "11 000"
+      },
+      {
+         "img": "img/sneaker.jpg",
+         "title": "Кроссовки Nike Air Force 1 :07 QS",
+         "price": "11 000"
+      }
+   ]
+}
