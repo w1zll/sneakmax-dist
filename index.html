@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Содержание</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230910141053">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="rootpage">
+			<h1>Верстка «sneakmax»</h1>
+			<div class="rootpage__info">
+				<!-- Особенности проекта -->
+			</div>
+			<h2>Готовые страницы:</h2>
+			<ul class="rootpage__list">
+				<li><a target="_blank" href="home.html">1. Главная</a></li>
+			</ul>
+			<h2>Попапы:</h2>
+			<ul class="rootpage__list">
+				<li><a target="_blank" href="home.html#" data-popup=""></a></li>
+			</ul>
+			<!-- <div class="rootpage__tnx">
+   				<h2>Спасибо за заказ!</h2>
+   				<p>Буду рад (а) хорошему отзыву.</p>
+   				<p>Обращайтесь еще!</p>
+   			</div> -->
+			<div class="rootpage__contacts">
+				<h2>Мои контакты:</h2>
+				<p>Telegram: <a href="https://t.me/fezqq">@fezqq</a></p>
+				<p>Почта: <a href="mailto:email@gmail.com">wizlvv@gmail.com</a></p>
+				<p>Почта: <a href="mailto:email@gmail.com">wizl5@mail.ru</a></p>
+			</div>
+		</div>
+		<div id="popup-order" aria-hidden="true" class="order-popup popup">
+			<div class="order-popup__wrapper popup__wrapper">
+				<div class="order-popup__content popup__content">
+					<button data-close type="button" class="order-popup__close"></button>
+					<div class="order-popup__text">
+						<div class="order-popup__header">
+							<h2 class="order-popup__header-title">Оформление заказа</h2>
+							<div class="order-popup__header-order-num">Заказ <span>3456 67</span></div>
+						</div>
+						<div data-simplebar data-simplebar-auto-hide="false" class="order-popup__details">
+							<div class="order-popup__quantity-products order-popup__info"><span class="order-popup__label popup-label">Товаров в заказе:</span> <span class="order-popup__details-value order-popup__quantity">3</span> шт</div>
+							<div class="order-popup__total-price order-popup__info">
+								<span class="order-popup__label popup-label">Общая сумма заказа:</span>
+								<span class="order-popup__details-value order-popup__total-price-value">25 789</span><span> р</span>
+							</div>
+							<div data-spollers class="order-popup__order-list order-list-popup">
+								<div class="order-list-popup__spollers-item">
+									<button data-spoller type="button" class="order-list-popup__title _spoller-active">Состав заказа</button>
+									<div class="order-list-popup__spollers-wrapper">
+										<div class="order-list-popup__list">
+											<div class="order-list-popup__item item-order-list-popup">
+												<a href="" class="item-order-list-popup__img"><img src="img/cart-product.png" alt="" /></a>
+												<div class="item-order-list-popup__info">
+													<a href="" class="item-order-list-popup__title">Женские кроссовки Puma Force 1 Shadow</a>
+													<div class="item-order-list-popup__price"><span>190 789</span> р</div>
+												</div>
+												<button type="button" class="item-order-list-popup__delete-btn">Удалить</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<form action="#">
+							<div class="order-popup__form">
+								<div class="form-order-popup">
+									<div class="form-order-popup__name input-wrapper"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваше имя" class="input input-wrapper__input" /></div>
+									<div class="form-order-popup__phone input-wrapper"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Номер телефона" class="input input-wrapper__input" /></div>
+									<div class="form-order-popup__email input-wrapper"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="E-mail" class="input input-wrapper__input" /></div>
+									<button type="submit" class="form-order-popup__button button">Оформить заказ</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="popup-card" aria-hidden="true" class="card-popup popup">
+			<div class="card-popup__wrapper popup__wrapper">
+				<div data-simplebar data-simplebar-auto-hide="false" class="card-popup__content popup__content">
+					<button data-close type="button" class="card-popup__close"></button>
+					<div class="card-popup__content-wrapper">
+						<div class="card-popup__main">
+							<div class="card-popup__img img-card-popup">
+								<div class="img-card-popup__main-slider">
+									<div class="main-slider-card-popup__slider swiper">
+										<div class="main-slider-card-popup__wrapper swiper-wrapper">
+											<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										</div>
+									</div>
+								</div>
+								<div class="second-row-card-popup__thumbs-slider">
+									<div class="thumbs-slider-card-popup__slider swiper">
+										<div class="thumbs-slider-card-popup__wrapper swiper-wrapper">
+											<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+											<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card-popup__order">
+								<div class="card-popup__meta">
+									<div class="card-popup__vendor-code"><span class="popup-label">Артикул:</span> <span>879876</span></div>
+									<div class="card-popup__stock"><span class="popup-label">В наличии:</span> <span>13</span> шт</div>
+								</div>
+								<div class="card-popup__title">Женские кроссовки Puma Force 1 Shadow</div>
+								<!-- <div class="card-popup__rating"></div> -->
+								<div class="card-popup__rating rating rating_set">
+									<div class="rating__body">
+										<div class="rating__active"></div>
+										<div class="rating__items">
+											<input type="radio" class="rating__item" value="1" name="rating">
+											<input type="radio" class="rating__item" value="2" name="rating">
+											<input type="radio" class="rating__item" value="3" name="rating">
+											<input type="radio" class="rating__item" value="4" name="rating">
+											<input type="radio" class="rating__item" value="5" name="rating">
+										</div>
+									</div>
+									<div class="rating__value">5</div>
+								</div>
+								<div class="card-popup__size size-card">
+									<div class="size-card__label">Выберите размер</div>
+									<div class="size-card__list">
+										<div class="size-card__item item-size-cart">
+											<input hidden id="o_36" class="item-size-cart__input" disabled type="radio" value="36" name="option-size">
+											<label for="o_36" class="item-size-cart__label" data-tip="2" data-tippy-content="Размера нет в наличии"><span class="item-size-cart__text">36</span></label>
+										</div>
+										<div class="options__item item-size-cart">
+											<input hidden id="o_37" class="item-size-cart__input" type="radio" value="37" name="option-size">
+											<label for="o_37" class="item-size-cart__label"><span class="item-size-cart__text">37</span></label>
+										</div>
+										<div class="options__item item-size-cart">
+											<input hidden id="o_38" class="item-size-cart__input" type="radio" value="38" name="option-size">
+											<label for="o_38" class="item-size-cart__label"><span class="item-size-cart__text">38</span></label>
+										</div>
+										<div class="options__item item-size-cart">
+											<input hidden id="o_39" class="item-size-cart__input" type="radio" value="39" name="option-size">
+											<label for="o_39" class="item-size-cart__label"><span class="item-size-cart__text">39</span></label>
+										</div>
+										<div class="options__item item-size-cart">
+											<input hidden id="o_40" class="item-size-cart__input" type="radio" value="40" name="option-size">
+											<label for="o_40" class="item-size-cart__label"><span class="item-size-cart__text">40</span></label>
+										</div>
+									</div>
+								</div>
+								<div class="card-popup__price-wrapper">
+									<div class="card-popup__price">
+										<div class="card-popup__price-current">19 789</div>
+										<div class="card-popup__price-old">20 578</div>
+									</div>
+								</div>
+								<button type="button" class="card-popup__button button">Заказать</button>
+								<div class="card-popup__features">
+									<div class="card-popup__feature">Бесплатная доставка до двери</div>
+									<div class="card-popup__feature">Оплата заказа при получении</div>
+									<div class="card-popup__feature">Обмен в течение двух недель</div>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="card-popup__second second-row-card-popup"> -->
+
+
+						<!-- </div> -->
+						<div class="card-popup__info">
+							<div class="card-popup__description description-card-popup">
+								<div class="description-card-popup__title title-cart-popup">Описание</div>
+								<div class="description-card-popup__text">
+									<p>Кроссовки Nike Blazer Mid '77 Vintage Suede с винтажной подошвой возрождают стиль баскетбольных моделей Nike проглого, создавая впечатление, что они хранились в шкафу долгие годы.</p>
+								</div>
+							</div>
+							<div class="card-popup__characteristics characteristics-card-popup">
+								<div class="characteristics-card-popup__title title-cart-popup">Характеристики</div>
+								<div class="characteristics-card-popup__list">
+									<div class="characteristics-card-popup__item">
+										<span>Пол:</span>
+										<span>Мужской</span>
+									</div>
+									<div class="characteristics-card-popup__item">
+										<span>Цвета:</span>
+										<span>Разноцветный</span>
+									</div>
+									<div class="characteristics-card-popup__item">
+										<span>Состав:</span>
+										<span>Кожа, текстить, резина</span>
+									</div>
+									<div class="characteristics-card-popup__item">
+										<span>Страна:</span>
+										<span>Вьетнам</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/app.min.js?_v=20230910141053"></script>
+	</div>
+</body>
+<style>
+	@charset "UTF-8";
+	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
+
+	*,
+	*::before,
+	*::after {
+		padding: 0px;
+		margin: 0px;
+		border: 0px;
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		min-width: 320px;
+		width: 100%;
+		/* color: #fff; */
+		background-color: #323232;
+	}
+
+	body {
+		/* font-family: Montserrat; */
+		font-size: 100%;
+		line-height: 1;
+		font-size: 1rem;
+	}
+
+	.rootpage a:visited {
+		text-decoration: none;
+		color: #aaa768;
+	}
+
+	.rootpage a,
+	.rootpage__contacts a:visited {
+		text-decoration: none;
+		color: #ebe691;
+	}
+
+	.rootpage a:hover {
+		text-decoration: underline;
+	}
+
+	.rootpage ul li {
+		list-style: none;
+	}
+
+	.rootpage img {
+		vertical-align: top;
+	}
+
+	.wrapper {
+		width: 100%;
+		min-height: 100%;
+		overflow: hidden;
+	}
+
+	.rootpage {
+		padding: 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		color: #fff;
+	}
+
+	@media (max-width: 767px) {
+		.rootpage {
+			padding: 30px 15px;
+		}
+	}
+
+	.rootpage h1 {
+		color: #ebe691;
+		font-size: 2.5rem;
+		margin: 0px 0px 1.25rem 0px;
+	}
+
+	@media (max-width: 767px) {
+		.rootpage h1 {
+			font-size: 1.85rem;
+			margin: 0px 0px 1.25rem 0px;
+		}
+	}
+
+	.rootpage h2 {
+		color: #ebe691;
+		font-size: 1.25rem;
+		margin: 0px 0px 1rem 0px;
+	}
+
+	@media (max-width: 767px) {
+		.rootpage h2 {
+			font-size: 1.125rem;
+			margin: 0px 0px 1rem 0px;
+		}
+	}
+
+	.rootpage__info {
+		line-height: 140%;
+		margin: 0px 0px 1.5rem 0px;
+	}
+
+	.rootpage__list {
+		margin: 0px 0px 2.25rem 1.25rem;
+	}
+
+	.rootpage__list li:not(:last-child) {
+		margin: 0px 0px 15px 0px;
+	}
+
+	.rootpage__contacts,
+	.rootpage__tnx {
+		border-radius: 200px;
+		padding: 20px 65px;
+		line-height: 140%;
+	}
+
+	@media (max-width: 767px) {
+
+		.rootpage__contacts,
+		.rootpage__tnx {
+			border-radius: 40px;
+			padding: 20px;
+		}
+	}
+
+	.rootpage__contacts {
+		background: #32b5a4;
+	}
+
+	.rootpage__contacts a {
+		color: #ebe691;
+	}
+
+	.rootpage__tnx {
+		background: #c22d63;
+		margin: 0px 0px 1rem 0px;
+	}
+</style>
+
+</html>

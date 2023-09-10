@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230910141053">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__row">
+					<a href="" class="header__logo">SneakMax</a>
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="#catalog" class="menu__link">Каталог</a></li>
+								<li class="menu__item"><a href="#about" class="menu__link">О нас</a></li>
+								<li class="menu__item"><a href="#sneaker-selection" class="menu__link">Подбор товара</a></li>
+								<li class="menu__item"><a href="#team" class="menu__link">Наша команда</a></li>
+								<li class="menu__item"><a href="#faq" class="menu__link">Доставка и оплата</a></li>
+								<li class="menu__item"><a href="#contacts" class="menu__link">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+					<button type="button" class="header__cart cart">
+						<span>Корзина</span>
+						<div class="cart__icon">
+							<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+								<use xlink:href="img/sprite/sprite-mono.svg#cart"></use>
+							</svg>
+							<!-- <span>1</span> -->
+						</div>
+					</button>
+					<div class="header__cart-sm cart-sm">
+						<div data-simplebar data-simplebar-auto-hide="false" class="cart-sm__list-wrapper">
+							<div class="cart-sm__list">
+								<!-- <div class="cart-sm__item item-cart-sm">
+                     <a href="" class="item-cart-sm__image"><img src="img/cart-product.png" alt="" /></a>
+                     <div class="item-cart-sm__body">
+                        <div class="item-cart-sm__body-row">
+                           <div class="item-cart-sm__item-info">
+                              <a href="" class="item-cart-sm__title">Женские кроссовки Puma Force 1 Shadow</a>
+                              <div class="item-cart-sm__price"><span>8 678</span> р</div>
+                           </div>
+                           <div class="item-cart-sm__delete">
+                              <button type="button" class="item-cart-sm__delete-btn"><svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1"><use xlink:href="img/sprite/sprite-mono.svg#trash"></use></svg></button>
+                           </div>
+                        </div>
+                     </div>
+                  </div> -->
+							</div>
+						</div>
+						<div class="cart-sm__total total-cart-sm">
+							<div class="total-cart-sm__row">
+								<div class="total-cart-sm__total">
+									<div class="total-cart-sm__total-label">Итого:</div>
+									<div class="total-cart-sm__total-value"><span>0</span> р</div>
+								</div>
+								<button disabled type="button" class="total-cart-sm__button button">Перейти в корзину</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="home-page page" id="page">
+			<div class="home-page__page-header page-header">
+				<div class="container">
+					<div class="page-header__content">
+						<h1 class="page-header__title">Кроссовки известных брендов с доставкой по России и СНГ</h1>
+						<div class="page-header__subtitle">Мы продаем кроссовки брендов Nike, Adidas, Puma, Reebok, Converse и многие другие по низким ценам</div>
+						<a href="" class="page-header__button button">Перейти к покупкам</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="home-page__catalog catalog" id="catalog">
+				<div class="container">
+					<h2 class="catalog__title title">Каталог</h2>
+					<button type="button" class="filter__mob-switcher">Параметры</button>
+					<div class="catalog__row">
+						<form action="#">
+							<div class="catalog__filter filter">
+								<button type="button" class="filter__close">Закрыть</button>
+								<div class="filter__title">Подбор по параметрам</div>
+								<div class="filter__price input-wrapper">
+									<div class="input-wrapper__label">Цена, руб</div>
+									<div class="input-wrapper__input input-wrapper__input--price-slider">
+										<input id="price-start" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="от" value="1850" class="input" />
+										<input id="price-end" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="до" value="25768" class="input" />
+										<div class="price-slider" id="price-slider" data-from="1850" data-to="25768"></div>
+									</div>
+								</div>
+								<div class="filter__gender input-wrapper">
+									<div class="input-wrapper__label">Пол</div>
+									<div class="input-wrapper__input">
+										<div class="checkbox">
+											<input id="c_1" class="checkbox__input" type="checkbox" value="1" name="form[]" />
+											<label for="c_1" class="checkbox__label"><span class="checkbox__text">мужской</span></label>
+											<input id="c_2" class="checkbox__input" type="checkbox" value="2" name="form[]" />
+											<label for="c_2" class="checkbox__label"><span class="checkbox__text">женский</span></label>
+										</div>
+									</div>
+								</div>
+								<div class="filter__size input-wrapper">
+									<div class="input-wrapper__label">Размер</div>
+									<div class="input-wrapper__input">
+										<div class="checkbox-blocks">
+											<input id="c-z_1" class="checkbox-blocks__input" type="checkbox" value="1" name="form[]" />
+											<label for="c-z_1" class="checkbox-blocks__label"><span class="checkbox-blocks__text">35</span></label>
+											<input id="c-z_2" class="checkbox-blocks__input" type="checkbox" value="2" name="form[]" />
+											<label for="c-z_2" class="checkbox-blocks__label"><span class="checkbox-blocks__text">36</span></label>
+											<input id="c-z_3" class="checkbox-blocks__input" type="checkbox" value="3" name="form[]" />
+											<label for="c-z_3" class="checkbox-blocks__label"><span class="checkbox-blocks__text">37</span></label>
+											<input id="c-z_4" class="checkbox-blocks__input" type="checkbox" value="4" name="form[]" />
+											<label for="c-z_4" class="checkbox-blocks__label"><span class="checkbox-blocks__text">38</span></label>
+											<input id="c-z_5" class="checkbox-blocks__input" type="checkbox" value="5" name="form[]" />
+											<label for="c-z_5" class="checkbox-blocks__label"><span class="checkbox-blocks__text">39</span></label>
+											<input id="c-z_6" class="checkbox-blocks__input" type="checkbox" value="6" name="form[]" />
+											<label for="c-z_6" class="checkbox-blocks__label"><span class="checkbox-blocks__text">40</span></label>
+											<input id="c-z_7" class="checkbox-blocks__input" type="checkbox" value="7" name="form[]" />
+											<label for="c-z_7" class="checkbox-blocks__label"><span class="checkbox-blocks__text">41</span></label>
+											<input id="c-z_8" class="checkbox-blocks__input" type="checkbox" value="8" name="form[]" />
+											<label for="c-z_8" class="checkbox-blocks__label"><span class="checkbox-blocks__text">42</span></label>
+											<input id="c-z_9" class="checkbox-blocks__input" type="checkbox" value="9" name="form[]" />
+											<label for="c-z_9" class="checkbox-blocks__label"><span class="checkbox-blocks__text">43</span></label>
+										</div>
+									</div>
+								</div>
+								<button type="submit" class="filter__submit button button--t2">Применить</button>
+								<button type="reset" class="filter__reset">сбросить</button>
+							</div>
+						</form>
+						<div class="catalog__list-wrapper">
+							<div class="catalog__list">
+								<div data-pid="1" class="catalog__card card-catalog">
+									<div href="" class="card-catalog__img">
+										<a href="" class="card-catalog__img-link"><img src="img/sneaker.jpg" alt="" /></a>
+										<div class="card-catalog__overflow">
+											<a class="card-catalog__overflow-icon card-catalog__overflow-show" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-multy.svg#show"></use>
+												</svg>
+											</a>
+											<a class="card-catalog__overflow-icon card-catalog__overflow-cart" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-mono.svg#cart"></use>
+												</svg>
+											</a>
+										</div>
+									</div>
+									<div class="card-catalog__body">
+										<a href="" class="card-catalog__title">Кроссовки Nike Air Force 1 :07 QS</a>
+										<div class="card-catalog__price"><span>11 000</span> р</div>
+									</div>
+								</div>
+								<div data-pid="2" class="catalog__card card-catalog">
+									<div href="" class="card-catalog__img">
+										<a href="" class="card-catalog__img-link"><img src="img/sneaker.jpg" alt="" /></a>
+										<div class="card-catalog__overflow">
+											<a class="card-catalog__overflow-icon card-catalog__overflow-show" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-multy.svg#show"></use>
+												</svg>
+											</a>
+											<a class="card-catalog__overflow-icon card-catalog__overflow-cart" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-mono.svg#cart"></use>
+												</svg>
+											</a>
+										</div>
+									</div>
+									<div class="card-catalog__body">
+										<a href="" class="card-catalog__title">Кроссовки Nike Air Force 1 :07 QS</a>
+										<div class="card-catalog__price"><span>11 000</span> р</div>
+									</div>
+								</div>
+								<div data-pid="3" class="catalog__card card-catalog">
+									<div href="" class="card-catalog__img">
+										<a href="" class="card-catalog__img-link"><img src="img/sneaker.jpg" alt="" /></a>
+										<div class="card-catalog__overflow">
+											<a class="card-catalog__overflow-icon card-catalog__overflow-show" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-multy.svg#show"></use>
+												</svg>
+											</a>
+											<a class="card-catalog__overflow-icon card-catalog__overflow-cart" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-mono.svg#cart"></use>
+												</svg>
+											</a>
+										</div>
+									</div>
+									<div class="card-catalog__body">
+										<a href="" class="card-catalog__title">Кроссовки Nike Air Force 1 :07 QS</a>
+										<div class="card-catalog__price"><span>11 000</span> р</div>
+									</div>
+								</div>
+								<div data-pid="4" class="catalog__card card-catalog">
+									<div href="" class="card-catalog__img">
+										<a href="" class="card-catalog__img-link"><img src="img/sneaker.jpg" alt="" /></a>
+										<div class="card-catalog__overflow">
+											<a class="card-catalog__overflow-icon card-catalog__overflow-show" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-multy.svg#show"></use>
+												</svg>
+											</a>
+											<a class="card-catalog__overflow-icon card-catalog__overflow-cart" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-mono.svg#cart"></use>
+												</svg>
+											</a>
+										</div>
+									</div>
+									<div class="card-catalog__body">
+										<a href="" class="card-catalog__title">Кроссовки Nike Air Force 1 :07 QS</a>
+										<div class="card-catalog__price"><span>11 000</span> р</div>
+									</div>
+								</div>
+								<div data-pid="5" class="catalog__card card-catalog">
+									<div href="" class="card-catalog__img">
+										<a href="" class="card-catalog__img-link"><img src="img/sneaker.jpg" alt="" /></a>
+										<div class="card-catalog__overflow">
+											<a class="card-catalog__overflow-icon card-catalog__overflow-show" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-multy.svg#show"></use>
+												</svg>
+											</a>
+											<a class="card-catalog__overflow-icon card-catalog__overflow-cart" href="">
+												<svg class="svg-icon svg-icon--mono" viewBox="0 0 1 1">
+													<use xlink:href="img/sprite/sprite-mono.svg#cart"></use>
+												</svg>
+											</a>
+										</div>
+									</div>
+									<div class="card-catalog__body">
+										<a href="" class="card-catalog__title">Кроссовки Nike Air Force 1 :07 QS</a>
+										<div class="card-catalog__price"><span>11 000</span> р</div>
+									</div>
+								</div>
+							</div>
+							<button class="catalog__load-more button">
+								Показать еще
+								<svg class="spinner" viewBox="0 0 50 50">
+									<circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+								</svg>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div data-prlx-parent class="home-page__about-block about-block" id="about">
+				<div class="container">
+					<div class="about-block__wrapper">
+						<div data-prlx data-coefficient="7" class="about-block__decor"><span></span></div>
+						<img data-prlx data-coefficient="10" class="about-block__img" src="img/about-block-img.jpg" alt="" />
+						<div class="about-block__content">
+							<h2 class="about-block__title title">Пара слов о нас</h2>
+							<div class="about-block__text">Спорт держит нас в форме. Учит дисциплине. Объединяет нас. Через спорт мы можем менять жизни. В том числе с помощью воодушевляющих историй спортсменов. Чтобы помочь тебе подняться и двигаться вперед.</div>
+							<div class="about-block__sign">SneakMax</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="home-page__sneaker-selection sneaker-selection" id="sneaker-selection">
+				<div class="container">
+					<form action="#">
+						<div class="sneaker-selection__content">
+							<div class="sneaker-selection__header">
+								<h2 class="sneaker-selection__title title">Мы подберем идеальную пару для вас</h2>
+								<div class="sneaker-selection__subtitle">Ответьте на три вопроса и мы вышлем каталог с самыми подходящими для вас моделями</div>
+							</div>
+							<div data-selection="1" class="sneaker-selection__selection">
+								<div class="sneaker-selection__label">Какой тип кроссовок рассматриваете?</div>
+								<div class="sneaker-selection__list">
+									<div class="sneaker-selection__item">
+										<label for="sn-c_1" class="sneaker-selection__item-img"><img src="img/sneaker-selection.jpg" alt="" /></label>
+										<input id="sn-c_1" class="checkbox__input" type="checkbox" value="1" name="form[]" />
+										<label for="sn-c_1" class="checkbox__label"><span class="checkbox__text">кеды</span></label>
+									</div>
+									<div class="sneaker-selection__item">
+										<label for="sn-c_2" class="sneaker-selection__item-img"><img src="img/sneaker-selection.jpg" alt="" /></label>
+										<input id="sn-c_2" class="checkbox__input" type="checkbox" value="2" name="form[]" />
+										<label for="sn-c_2" class="checkbox__label"><span class="checkbox__text">кеды</span></label>
+									</div>
+									<div class="sneaker-selection__item">
+										<label for="sn-c_3" class="sneaker-selection__item-img"><img src="img/sneaker-selection.jpg" alt="" /></label>
+										<input id="sn-c_3" class="checkbox__input" type="checkbox" value="3" name="form[]" />
+										<label for="sn-c_3" class="checkbox__label"><span class="checkbox__text">кеды</span></label>
+									</div>
+									<div class="sneaker-selection__item">
+										<label for="sn-c_4" class="sneaker-selection__item-img"><img src="img/sneaker-selection.jpg" alt="" /></label>
+										<input id="sn-c_4" class="checkbox__input" type="checkbox" value="4" name="form[]" />
+										<label for="sn-c_4" class="checkbox__label"><span class="checkbox__text">кеды</span></label>
+									</div>
+									<div class="sneaker-selection__item">
+										<label for="sn-c_5" class="sneaker-selection__item-img"><img src="img/sneaker-selection.jpg" alt="" /></label>
+										<input id="sn-c_5" class="checkbox__input" type="checkbox" value="5" name="form[]" />
+										<label for="sn-c_5" class="checkbox__label"><span class="checkbox__text">кеды</span></label>
+									</div>
+									<div class="sneaker-selection__item">
+										<label for="sn-c_6" class="sneaker-selection__item-img"><img src="img/sneaker-selection.jpg" alt="" /></label>
+										<input id="sn-c_6" class="checkbox__input" type="checkbox" value="6" name="form[]" />
+										<label for="sn-c_6" class="checkbox__label"><span class="checkbox__text">кеды</span></label>
+									</div>
+								</div>
+							</div>
+							<div data-selection="2" hidden class="sneaker-selection__selection">
+								<div class="sneaker-selection__label">Какой размер вам подойдет?</div>
+								<div class="sneaker-selection__list2">
+									<div class="sneaker-selection__options">
+										<div class="sneaker-selection__option">
+											<input hidden id="o-s2_1" class="options__input checkbox__input" type="radio" value="1" name="option" />
+											<label for="o-s2_1" class="options__label checkbox__label"><span class="options__text checkbox__text">менее 36</span></label>
+										</div>
+										<div class="sneaker-selection__option">
+											<input hidden id="o-s2_2" class="options__input checkbox__input" type="radio" value="2" name="option" />
+											<label for="o-s2_2" class="options__label checkbox__label"><span class="options__text checkbox__text">36-38</span></label>
+										</div>
+										<div class="sneaker-selection__option">
+											<input hidden id="o-s2_3" class="options__input checkbox__input" type="radio" value="2" name="option" />
+											<label for="o-s2_3" class="options__label checkbox__label"><span class="options__text checkbox__text">39-41</span></label>
+										</div>
+										<div class="sneaker-selection__option">
+											<input hidden id="o-s2_4" class="options__input checkbox__input" type="radio" value="2" name="option" />
+											<label for="o-s2_4" class="options__label checkbox__label"><span class="options__text checkbox__text">42-44</span></label>
+										</div>
+										<div class="sneaker-selection__option">
+											<input hidden id="o-s2_5" class="options__input checkbox__input" type="radio" value="2" name="option" />
+											<label for="o-s2_5" class="options__label checkbox__label"><span class="options__text checkbox__text">45 и больше</span></label>
+										</div>
+									</div>
+									<div class="sneaker-selection__cover">
+										<img src="img/sneaker-selection_2.jpg" alt="">
+									</div>
+								</div>
+							</div>
+							<div data-selection="3" hidden class="sneaker-selection__selection">
+								<div class="sneaker-selection__label">Уточните какие-либо моменты</div>
+								<div class="sneaker-selection__list3">
+									<textarea class="sneaker-selection__textarea" name="sneaker-selection-ta" id="sneaker-selection-ta" placeholder="Введите сообщение"></textarea>
+								</div>
+							</div>
+							<div class="sneaker-selection__footer">
+								<div class="sneaker-selection__footer-pagination"><span>1</span> из 3</div>
+								<button type="button" class="sneaker-selection__button button button--t3">Следующий шаг</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div data-prlx-parent class="home-page__team team" id="team">
+				<div class="container">
+					<div class="team__content">
+						<div data-prlx data-coefficient="10" class="team__decor"></div>
+						<h2 class="team__title title">Наша команда</h2>
+						<div class="team__list">
+							<div class="team__item item-team">
+								<div class="item-team__img"><img src="img/team/team_01.jpg" alt="" /></div>
+								<div class="item-team__body">
+									<div class="item-team__name">Максим Золотарев</div>
+									<div class="item-team__post">Администратор</div>
+								</div>
+							</div>
+							<div class="team__item item-team">
+								<div class="item-team__img"><img src="img/team/team_02.jpg" alt="" /></div>
+								<div class="item-team__body">
+									<div class="item-team__name">Максим Золотарев</div>
+									<div class="item-team__post">Администратор</div>
+								</div>
+							</div>
+							<div class="team__item item-team">
+								<div class="item-team__img"><img src="img/team/team_03.jpg" alt="" /></div>
+								<div class="item-team__body">
+									<div class="item-team__name">Максим Золотарев</div>
+									<div class="item-team__post">Администратор</div>
+								</div>
+							</div>
+							<div class="team__item item-team">
+								<div class="item-team__img"><img src="img/team/team_04.jpg" alt="" /></div>
+								<div class="item-team__body">
+									<div class="item-team__name">Максим Золотарев</div>
+									<div class="item-team__post">Администратор</div>
+								</div>
+							</div>
+							<div class="team__item item-team">
+								<div class="item-team__img"><img src="img/team/team_05.jpg" alt="" /></div>
+								<div class="item-team__body">
+									<div class="item-team__name">Максим Золотарев</div>
+									<div class="item-team__post">Администратор</div>
+								</div>
+							</div>
+							<div class="team__item item-team">
+								<div class="item-team__img"><img src="img/team/team_06.jpg" alt="" /></div>
+								<div class="item-team__body">
+									<div class="item-team__name">Максим Золотарев</div>
+									<div class="item-team__post">Администратор</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="home-page__faq faq" id="faq">
+				<div class="container">
+					<h2 class="faq__title title">Часто задаваемые вопросы</h2>
+					<div class="faq__wrapper">
+						<div data-spollers data-spollers-speed="400" class="faq__spollers spollers-faq">
+							<div class="spollers-faq__item">
+								<button type="button" data-spoller class="spollers-faq__title">Вопрос 1</button>
+								<div class="spollers-faq__body">Ответ на вопрос 1</div>
+							</div>
+							<div class="spollers-faq__item">
+								<button type="button" data-spoller class="spollers-faq__title">Вопрос 2</button>
+								<div class="spollers-faq__body">Ответ на вопрос 2</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="home-page__contacts contacts" id="contacts">
+				<div class="container">
+					<div class="contacts__row">
+						<div class="contacts__text">
+							<h2 class="contacts__title title">Контакты</h2>
+							<div class="contacts__department department-contacts">
+								<div class="department-contacts__title department-contacts__title--tip">
+									<span>Главный офис</span>
+									<button data-tip="1" data-tippy-content="Адрес и телефон для корреспонденции, инвесторов. Вопросы о доставке, качестве обслуживания и товара просьба задавать в отдел продаж" class="department-contacts__tip">
+										<svg class="svg-icon svg-icon--mono" viewBox="0 0 6 10">
+											<use xlink:href="img/sprite/sprite-mono.svg#question"></use>
+										</svg>
+									</button>
+								</div>
+								<a href="tel:+78007898989" class="department-contacts__phone">7 800 789 89 89</a>
+								<div class="department-contacts__address">г. Санкт-Петербург, Комсомольская, 43 к1</div>
+							</div>
+							<div class="contacts__department department-contacts">
+								<div class="department-contacts__title">
+									<span>Отдел продаж</span>
+								</div>
+								<a href="tel:+78007898989" class="department-contacts__phone">7 800 789 89 89</a>
+								<div class="department-contacts__address">г. Санкт-Петербург, Комсомольская, 43 к1</div>
+							</div>
+							<div class="contacts__socials">
+								<a href="" class="contacts__social"><svg class="svg-icon svg-icon--multy" viewBox="0 0 1 1">
+										<use xlink:href="img/sprite/sprite-multy.svg#vk"></use>
+									</svg></a>
+								<a href="" class="contacts__social"><svg class="svg-icon svg-icon--multy" viewBox="0 0 1 1">
+										<use xlink:href="img/sprite/sprite-multy.svg#instagram"></use>
+									</svg></a>
+							</div>
+						</div>
+						<div class="contacts__map"><img src="img/map.png" alt="" /></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="home-page__questions-form questions-form">
+				<div class="container">
+					<div class="questions-form__row">
+						<form action="#">
+							<div class="questions-form__form form-questions">
+								<h2 class="form-questions__title title">Есть вопросы?</h2>
+								<div class="form-questions__subtitle">Заполните форму и наш менеджер свяжется с вами</div>
+								<div class="form-questions__name input-wrapper">
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваше имя" class="input input-wrapper__input" />
+								</div>
+								<div class="form-questions__phone input-wrapper">
+									<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Номер телефона" class="input input-wrapper__input" />
+								</div>
+								<button type="submit" class="form-questions__button button">Отправить</button>
+							</div>
+						</form>
+						<div class="questions-form__instagram instagram">
+							<a href="" class="instagram__logo"><img src="img/instagram/instagram-logo.png" alt="" /></a>
+							<div class="instagram__grid">
+								<a href="" class="instagram__img"><img src="img/instagram/instagram_01.jpg" alt="" /></a>
+								<a href="" class="instagram__img"><img src="img/instagram/instagram_02.jpg" alt="" /></a>
+								<a href="" class="instagram__img"><img src="img/instagram/instagram_03.jpg" alt="" /></a>
+								<a href="" class="instagram__img"><img src="img/instagram/instagram_04.jpg" alt="" /></a>
+								<a href="" class="instagram__img"><img src="img/instagram/instagram_05.jpg" alt="" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__row">
+					<a href="" class="footer__logo">SneakMax</a>
+					<nav data-spollers="0" class="footer__nav nav-footer">
+						<!-- <nav data-spollers="0" class="footer__nav nav-footer"> -->
+						<div class="nav-footer__item">
+							<button type="button" data-spoller class="nav-footer__title">Навигация</button>
+							<div class="nav-footer__body">
+								<div class="nav-footer__list">
+									<a href="" class="nav-footer__link">Каталог</a>
+									<a href="" class="nav-footer__link">О нас</a>
+									<a href="" class="nav-footer__link">Подбор товара</a>
+									<a href="" class="nav-footer__link">Наша команда</a>
+									<a href="" class="nav-footer__link">Доставка и оплата</a>
+									<a href="" class="nav-footer__link">Контакты</a>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<div id="popup-order" aria-hidden="true" class="order-popup popup">
+		<div class="order-popup__wrapper popup__wrapper">
+			<div class="order-popup__content popup__content">
+				<button data-close type="button" class="order-popup__close"></button>
+				<div class="order-popup__text">
+					<div class="order-popup__header">
+						<h2 class="order-popup__header-title">Оформление заказа</h2>
+						<div class="order-popup__header-order-num">Заказ <span>3456 67</span></div>
+					</div>
+					<div data-simplebar data-simplebar-auto-hide="false" class="order-popup__details">
+						<div class="order-popup__quantity-products order-popup__info"><span class="order-popup__label popup-label">Товаров в заказе:</span> <span class="order-popup__details-value order-popup__quantity">3</span> шт</div>
+						<div class="order-popup__total-price order-popup__info">
+							<span class="order-popup__label popup-label">Общая сумма заказа:</span>
+							<span class="order-popup__details-value order-popup__total-price-value">25 789</span><span> р</span>
+						</div>
+						<div data-spollers class="order-popup__order-list order-list-popup">
+							<div class="order-list-popup__spollers-item">
+								<button data-spoller type="button" class="order-list-popup__title _spoller-active">Состав заказа</button>
+								<div class="order-list-popup__spollers-wrapper">
+									<div class="order-list-popup__list">
+										<div class="order-list-popup__item item-order-list-popup">
+											<a href="" class="item-order-list-popup__img"><img src="img/cart-product.png" alt="" /></a>
+											<div class="item-order-list-popup__info">
+												<a href="" class="item-order-list-popup__title">Женские кроссовки Puma Force 1 Shadow</a>
+												<div class="item-order-list-popup__price"><span>190 789</span> р</div>
+											</div>
+											<button type="button" class="item-order-list-popup__delete-btn">Удалить</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<form action="#">
+						<div class="order-popup__form">
+							<div class="form-order-popup">
+								<div class="form-order-popup__name input-wrapper"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Ваше имя" class="input input-wrapper__input" /></div>
+								<div class="form-order-popup__phone input-wrapper"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Номер телефона" class="input input-wrapper__input" /></div>
+								<div class="form-order-popup__email input-wrapper"><input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="E-mail" class="input input-wrapper__input" /></div>
+								<button type="submit" class="form-order-popup__button button">Оформить заказ</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-card" aria-hidden="true" class="card-popup popup">
+		<div class="card-popup__wrapper popup__wrapper">
+			<div data-simplebar data-simplebar-auto-hide="false" class="card-popup__content popup__content">
+				<button data-close type="button" class="card-popup__close"></button>
+				<div class="card-popup__content-wrapper">
+					<div class="card-popup__main">
+						<div class="card-popup__img img-card-popup">
+							<div class="img-card-popup__main-slider">
+								<div class="main-slider-card-popup__slider swiper">
+									<div class="main-slider-card-popup__wrapper swiper-wrapper">
+										<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="main-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+									</div>
+								</div>
+							</div>
+							<div class="second-row-card-popup__thumbs-slider">
+								<div class="thumbs-slider-card-popup__slider swiper">
+									<div class="thumbs-slider-card-popup__wrapper swiper-wrapper">
+										<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+										<div class="thumbs-slider-card-popup__slide swiper-slide"><img src="img/cart-product.png" alt=""></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-popup__order">
+							<div class="card-popup__meta">
+								<div class="card-popup__vendor-code"><span class="popup-label">Артикул:</span> <span>879876</span></div>
+								<div class="card-popup__stock"><span class="popup-label">В наличии:</span> <span>13</span> шт</div>
+							</div>
+							<div class="card-popup__title">Женские кроссовки Puma Force 1 Shadow</div>
+							<!-- <div class="card-popup__rating"></div> -->
+							<div class="card-popup__rating rating rating_set">
+								<div class="rating__body">
+									<div class="rating__active"></div>
+									<div class="rating__items">
+										<input type="radio" class="rating__item" value="1" name="rating">
+										<input type="radio" class="rating__item" value="2" name="rating">
+										<input type="radio" class="rating__item" value="3" name="rating">
+										<input type="radio" class="rating__item" value="4" name="rating">
+										<input type="radio" class="rating__item" value="5" name="rating">
+									</div>
+								</div>
+								<div class="rating__value">5</div>
+							</div>
+							<div class="card-popup__size size-card">
+								<div class="size-card__label">Выберите размер</div>
+								<div class="size-card__list">
+									<div class="size-card__item item-size-cart">
+										<input hidden id="o_36" class="item-size-cart__input" disabled type="radio" value="36" name="option-size">
+										<label for="o_36" class="item-size-cart__label" data-tip="2" data-tippy-content="Размера нет в наличии"><span class="item-size-cart__text">36</span></label>
+									</div>
+									<div class="options__item item-size-cart">
+										<input hidden id="o_37" class="item-size-cart__input" type="radio" value="37" name="option-size">
+										<label for="o_37" class="item-size-cart__label"><span class="item-size-cart__text">37</span></label>
+									</div>
+									<div class="options__item item-size-cart">
+										<input hidden id="o_38" class="item-size-cart__input" type="radio" value="38" name="option-size">
+										<label for="o_38" class="item-size-cart__label"><span class="item-size-cart__text">38</span></label>
+									</div>
+									<div class="options__item item-size-cart">
+										<input hidden id="o_39" class="item-size-cart__input" type="radio" value="39" name="option-size">
+										<label for="o_39" class="item-size-cart__label"><span class="item-size-cart__text">39</span></label>
+									</div>
+									<div class="options__item item-size-cart">
+										<input hidden id="o_40" class="item-size-cart__input" type="radio" value="40" name="option-size">
+										<label for="o_40" class="item-size-cart__label"><span class="item-size-cart__text">40</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="card-popup__price-wrapper">
+								<div class="card-popup__price">
+									<div class="card-popup__price-current">19 789</div>
+									<div class="card-popup__price-old">20 578</div>
+								</div>
+							</div>
+							<button type="button" class="card-popup__button button">Заказать</button>
+							<div class="card-popup__features">
+								<div class="card-popup__feature">Бесплатная доставка до двери</div>
+								<div class="card-popup__feature">Оплата заказа при получении</div>
+								<div class="card-popup__feature">Обмен в течение двух недель</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="card-popup__second second-row-card-popup"> -->
+
+
+					<!-- </div> -->
+					<div class="card-popup__info">
+						<div class="card-popup__description description-card-popup">
+							<div class="description-card-popup__title title-cart-popup">Описание</div>
+							<div class="description-card-popup__text">
+								<p>Кроссовки Nike Blazer Mid '77 Vintage Suede с винтажной подошвой возрождают стиль баскетбольных моделей Nike проглого, создавая впечатление, что они хранились в шкафу долгие годы.</p>
+							</div>
+						</div>
+						<div class="card-popup__characteristics characteristics-card-popup">
+							<div class="characteristics-card-popup__title title-cart-popup">Характеристики</div>
+							<div class="characteristics-card-popup__list">
+								<div class="characteristics-card-popup__item">
+									<span>Пол:</span>
+									<span>Мужской</span>
+								</div>
+								<div class="characteristics-card-popup__item">
+									<span>Цвета:</span>
+									<span>Разноцветный</span>
+								</div>
+								<div class="characteristics-card-popup__item">
+									<span>Состав:</span>
+									<span>Кожа, текстить, резина</span>
+								</div>
+								<div class="characteristics-card-popup__item">
+									<span>Страна:</span>
+									<span>Вьетнам</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20230910141053"></script>
+</body>
+
+</html>
