@@ -31,6 +31,9 @@
                 document.documentElement.classList.add(className);
             }));
         }
+        function getHash() {
+            if (location.hash) return location.hash.replace("#", "");
+        }
         let _slideUp = (target, duration = 500, showmore = 0) => {
             if (!target.classList.contains("_slide")) {
                 target.classList.add("_slide");
@@ -221,10 +224,10 @@
                 if (bodyLockStatus && e.target.closest(".icon-menu")) {
                     bodyLockToggle();
                     document.documentElement.classList.toggle("menu-open");
-                } else if (document.documentElement.classList.contains("menu-open") && !e.target.closest(".menu__body")) functions_menuClose();
+                } else if (document.documentElement.classList.contains("menu-open") && !e.target.closest(".menu__body")) menuClose();
             }));
         }
-        function functions_menuClose() {
+        function menuClose() {
             bodyUnlock();
             document.documentElement.classList.remove("menu-open");
         }
@@ -347,7 +350,6 @@
                 this.options.init ? this.initPopups() : null;
             }
             initPopups() {
-                this.popupLogging(`Проснулся`);
                 this.eventsPopup();
             }
             eventsPopup() {
@@ -363,7 +365,7 @@
                             this._selectorOpen = true;
                             this.open();
                             return;
-                        } else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
+                        }
                         return;
                     }
                     const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
@@ -448,8 +450,7 @@
                                 popup: this
                             }
                         }));
-                        this.popupLogging(`Открыл попап`);
-                    } else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
+                    }
                 }
             }
             close(selectorValue) {
@@ -483,7 +484,6 @@
                 setTimeout((() => {
                     this._focusTrap();
                 }), 50);
-                this.popupLogging(`Закрыл попап`);
             }
             _getHash() {
                 if (this.options.hashSettings.location) this.hash = this.targetOpen.selector.includes("#") ? this.targetOpen.selector : this.targetOpen.selector.replace(".", "#");
@@ -521,6 +521,34 @@
             }
         }
         modules_flsModules.popup = new Popup({});
+        let gotoblock_gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+            const targetBlockElement = document.querySelector(targetBlock);
+            if (targetBlockElement) {
+                let headerItem = "";
+                let headerItemHeight = 0;
+                if (noHeader) {
+                    headerItem = "header.header";
+                    headerItemHeight = document.querySelector(headerItem).offsetHeight;
+                }
+                let options = {
+                    speedAsDuration: true,
+                    speed,
+                    header: headerItem,
+                    offset: offsetTop,
+                    easing: "easeOutQuad"
+                };
+                document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+                if (typeof SmoothScroll !== "undefined") (new SmoothScroll).animateScroll(targetBlockElement, "", options); else {
+                    let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+                    targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+                    targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+                    window.scrollTo({
+                        top: targetBlockElementPosition,
+                        behavior: "smooth"
+                    });
+                }
+            }
+        };
         function formRating() {
             const ratings = document.querySelectorAll(".rating");
             if (ratings.length > 0) initRatings();
@@ -8369,6 +8397,44 @@
         };
         if (document.querySelectorAll("[data-prlx-parent]")) modules_flsModules.parallax = new parallax_Parallax(document.querySelectorAll("[data-prlx-parent]"));
         let addWindowScrollEvent = false;
+        function pageNavigation() {
+            document.addEventListener("click", pageNavigationAction);
+            document.addEventListener("watcherCallback", pageNavigationAction);
+            function pageNavigationAction(e) {
+                if (e.type === "click") {
+                    const targetElement = e.target;
+                    if (targetElement.closest("[data-goto]")) {
+                        const gotoLink = targetElement.closest("[data-goto]");
+                        const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : "";
+                        const noHeader = gotoLink.hasAttribute("data-goto-header") ? true : false;
+                        const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
+                        const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
+                        gotoblock_gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+                        e.preventDefault();
+                    }
+                } else if (e.type === "watcherCallback" && e.detail) {
+                    const entry = e.detail.entry;
+                    const targetElement = entry.target;
+                    if (targetElement.dataset.watch === "navigator") {
+                        document.querySelector(`[data-goto]._navigator-active`);
+                        let navigatorCurrentItem;
+                        if (targetElement.id && document.querySelector(`[data-goto="#${targetElement.id}"]`)) navigatorCurrentItem = document.querySelector(`[data-goto="#${targetElement.id}"]`); else if (targetElement.classList.length) for (let index = 0; index < targetElement.classList.length; index++) {
+                            const element = targetElement.classList[index];
+                            if (document.querySelector(`[data-goto=".${element}"]`)) {
+                                navigatorCurrentItem = document.querySelector(`[data-goto=".${element}"]`);
+                                break;
+                            }
+                        }
+                        if (entry.isIntersecting) navigatorCurrentItem ? navigatorCurrentItem.classList.add("_navigator-active") : null; else navigatorCurrentItem ? navigatorCurrentItem.classList.remove("_navigator-active") : null;
+                    }
+                }
+            }
+            if (getHash()) {
+                let goToHash;
+                if (document.querySelector(`#${getHash()}`)) goToHash = `#${getHash()}`; else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
+                goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 20) : null;
+            }
+        }
         setTimeout((() => {
             if (addWindowScrollEvent) {
                 let windowScroll = new Event("windowScroll");
@@ -8454,7 +8520,7 @@
                 e.preventDefault();
                 modules_flsModules.popup.open("#popup-card");
             }
-            if (targetElement.closest(".menu__item")) functions_menuClose();
+            if (targetElement.closest(".menu__item")) menuClose();
         }));
         let dataCartCartPid = 0;
         function addToCart(productButton, productId) {
@@ -8545,11 +8611,10 @@
         const sneakerSelection = document.querySelector(".sneaker-selection");
         if (sneakerSelection) sneakerSelectionInit();
         function sneakerSelectionInit() {
-            const sneakerSelectionItems = sneakerSelection.querySelectorAll("[data-selection]");
+            sneakerSelection.querySelectorAll("[data-selection]");
             const sneakerSelectionButton = sneakerSelection.querySelector(".sneaker-selection__button");
             const sneakerSelectionPagination = sneakerSelection.querySelector(".sneaker-selection__footer-pagination span");
             let sneakerSelectionIndex = 1;
-            console.log(sneakerSelectionItems);
             sneakerSelectionButton.addEventListener("click", (() => {
                 if (!sneakerSelectionButton.classList.contains("_hold")) {
                     sneakerSelectionButton.classList.add("_hold");
@@ -8582,5 +8647,6 @@
         menuInit();
         spollers();
         formRating();
+        pageNavigation();
     })();
 })();

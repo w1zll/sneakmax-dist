@@ -1422,18 +1422,6 @@ body::after {
   padding: 0rem 0rem 1.25rem 1.25rem;
 }
 
-@supports (padding-right: clamp( 1.25rem , -30.0309031282rem  +  50.454086781vw , 8.125rem )) {
-  .card-popup__content-wrapper {
-    padding-right: clamp( 1.25rem , -30.0309031282rem  +  50.454086781vw , 8.125rem );
-  }
-}
-
-@supports not (padding-right: clamp( 1.25rem , -30.0309031282rem  +  50.454086781vw , 8.125rem )) {
-  .card-popup__content-wrapper {
-    padding-right: calc(1.25rem + 6.875 * (100vw - 61.99875rem) / 13.62625);
-  }
-}
-
 .card-popup__main,
 .card-popup__second,
 .card-popup__info {
@@ -2838,7 +2826,6 @@ body::after {
 }
 
 .sneaker-selection__button {
-  font-size: 1rem;
   padding: 0.9375em 2.625em;
   font-weight: 600;
 }
@@ -2858,11 +2845,21 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1.25rem 4.375rem;
+  row-gap: 1.5625rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.sneaker-selection__option {
-  min-width: 108px;
+@supports (gap: clamp( 1.25rem , -5.234375rem  +  12.5vw , 4.375rem )) {
+  .sneaker-selection__options {
+    gap: clamp( 1.25rem , -5.234375rem  +  12.5vw , 4.375rem );
+  }
+}
+
+@supports not (gap: clamp( 1.25rem , -5.234375rem  +  12.5vw , 4.375rem )) {
+  .sneaker-selection__options {
+    gap: calc(1.25rem + 3.125 * (100vw - 51.875rem) / 25);
+  }
 }
 
 .sneaker-selection__cover {
@@ -4119,6 +4116,20 @@ body::after {
   -ms-overflow-style: none;
 }
 
+@media (min-width: 27.5em) {
+@supports (padding-right: clamp( 1.25rem , -30.0309031282rem  +  50.454086781vw , 8.125rem )) {
+    .card-popup__content-wrapper {
+      padding-right: clamp( 1.25rem , -30.0309031282rem  +  50.454086781vw , 8.125rem );
+    }
+}
+
+@supports not (padding-right: clamp( 1.25rem , -30.0309031282rem  +  50.454086781vw , 8.125rem )) {
+    .card-popup__content-wrapper {
+      padding-right: calc(1.25rem + 6.875 * (100vw - 61.99875rem) / 13.62625);
+    }
+}
+}
+
 @media (min-width: 38.8125em) {
   .nav-footer__title {
     display: none;
@@ -4128,6 +4139,12 @@ body::after {
 @media (min-width: 25em) {
   .instagram__img:nth-child(2) {
     grid-area: span 2/span 2;
+  }
+}
+
+@media (min-width: 64em) {
+  .sneaker-selection__option {
+    min-width: 108px;
   }
 }
 
@@ -4163,6 +4180,10 @@ body::after {
 
   .cart span {
     display: none;
+  }
+
+  .sneaker-selection__button {
+    padding: 0.625em 0.9375em;
   }
 
   .instagram__grid {
@@ -4494,6 +4515,12 @@ body::after {
 
   .total-cart-sm__button {
     padding: 0.8571428571em 0.7142857143em;
+  }
+}
+
+@media (max-width: 27.5em) {
+  .card-popup__content-wrapper {
+    padding: 0;
   }
 }
 
